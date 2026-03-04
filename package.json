@@ -1,0 +1,45 @@
+{
+  "name": "iblokz-tools",
+  "version": "1.0.0",
+  "description": "CLI tools for diagram and data workflows (Mermaid erDiagram → draw.io)",
+  "type": "module",
+  "main": "index.js",
+  "bin": "./index.js",
+  "files": [
+    "index.js",
+    "lib/",
+    "LICENSE",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "build": "node index.js --help",
+    "start": "nodemon --watch lib --watch data --ext js,mmd --exec \"node index.js mermaid-to-drawio data/erd.mmd data/erd.drawio\""
+  },
+  "keywords": [
+    "cli",
+    "mermaid",
+    "er-diagram",
+    "drawio",
+    "diagrams",
+    "erd",
+    "iblokz"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iblokz/tools.git"
+  },
+  "bugs": {
+    "url": "https://github.com/iblokz/tools/issues"
+  },
+  "homepage": "https://github.com/iblokz/tools#readme",
+  "packageManager": "pnpm@10.22.0",
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}

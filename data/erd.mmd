@@ -1,0 +1,63 @@
+erDiagram
+  User ||--o{ Post : "writes"
+  Post ||--o{ Comment : "has"
+  User ||--o{ Comment : "writes"
+  Company ||--|| LegalRep : "has"
+  Order }o--|| Customer : "placed by"
+  Order ||--o{ LineItem : "has"
+
+  User {
+    string id PK
+    string email
+    string name
+    string createdAt
+  }
+
+  Post {
+    string id PK
+    string title
+    string body
+    string userId FK
+    string publishedAt
+  }
+
+  Comment {
+    string id PK
+    string content
+    string postId FK
+    string userId FK
+    string createdAt
+  }
+
+  Company {
+    string id PK
+    string name
+    string registrationNo
+  }
+
+  LegalRep {
+    string id PK
+    string companyId FK
+    string name
+    string email
+  }
+
+  Order {
+    string id PK
+    string customerId FK
+    string placedAt
+    string total
+  }
+
+  Customer {
+    string id PK
+    string name
+    string email
+  }
+
+  LineItem {
+    string id PK
+    string orderId FK
+    string productRef
+    string qty
+  }
